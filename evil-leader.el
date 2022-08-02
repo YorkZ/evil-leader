@@ -137,8 +137,9 @@ emacs/insert state.
   "Minor mode to enable <leader> support."
   :init-value nil
   :keymap nil
-  (let* ((prefixed (read-kbd-macro (concat evil-leader/non-normal-prefix evil-leader/leader)))
-         (no-prefix (read-kbd-macro evil-leader/leader))
+  (let* ((prefixed (kbd (concat evil-leader/non-normal-prefix
+                                evil-leader/leader)))
+         (no-prefix (kbd evil-leader/leader))
          (mode-map (cdr (assoc major-mode evil-leader--mode-maps)))
          (map (or mode-map evil-leader--default-map))
          (no-prefix-rx (if evil-leader/no-prefix-mode-rx
@@ -209,7 +210,7 @@ See `evil-leader/set-key'."
 
 (defun evil-leader--def-keys (map key def bindings)
   (while key
-    (define-key map (read-kbd-macro key) def)
+    (define-key map (kbd key) def)
     (setq key (pop bindings)
           def (pop bindings))))
 
