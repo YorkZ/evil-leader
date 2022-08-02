@@ -127,7 +127,7 @@ emacs/insert state.
 ;;;###autoload
 (define-minor-mode global-evil-leader-mode
   "Global minor mode for <leader> support."
-  nil nil nil
+  :lighter nil
   (if global-evil-leader-mode
       (add-hook 'evil-local-mode-hook #'evil-leader-mode t)
     (remove-hook 'evil-local-mode-hook #'evil-leader-mode t)))
