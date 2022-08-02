@@ -90,8 +90,9 @@
   :prefix 'evil-leader/)
 
 (defcustom evil-leader/leader "\\"
-  "The <leader> key, used to access keys defined by `evil-leader/set-key' in normal and visual state.
-Must be readable by `read-kbd-macro'. For example: \",\"."
+  "The <leader> key, used to access keys defined by
+`evil-leader/set-key' in normal and visual state. Must be
+readable by `read-kbd-macro'. For example: \",\"."
   :type 'string
   :group 'evil-leader)
 
@@ -103,18 +104,21 @@ The combination has to be readable by `read-kbd-macro'."
   :group 'evil-leader)
 
 (defcustom evil-leader/no-prefix-mode-rx nil
-  "List of regular expressions for mode names where `evil-leader/leader' is used regardless of the state.
+  "List of regular expressions for mode names where
+`evil-leader/leader' is used regardless of the state.
 
-If the current major mode is matched by one of the regular expressions
-`evil-leader/leader' is installed in emacs/insert state without
-the prefix additionally to the prefixed key.
+If the current major mode is matched by one of the regular
+expressions `evil-leader/leader' is installed in emacs/insert
+state without the prefix additionally to the prefixed key.
 
-`evil-leader/in-all-states' has to be non-nil for this setting to have any effect."
+`evil-leader/in-all-states' has to be non-nil for this setting to
+have any effect."
   :type 'list
   :group 'evil-leader)
 
 (defcustom evil-leader/in-all-states nil
-  "If is non-nil leader-map is accessible by <prefixed-leader> in emacs/insert state.
+  "If is non-nil leader-map is accessible by <prefixed-leader> in
+emacs/insert state.
 
 <prefixed-leader> is `evil-leader/non-normal-prefix' + `evil-leader/leader'"
   :type 'boolean
@@ -161,7 +165,8 @@ the prefix additionally to the prefixed key.
           (define-key evil-insert-state-local-map no-prefix nil))))))
 
 (defun evil-leader/set-leader (key &optional prefix)
-  "Set leader key to `key' and non-normal-prefix to `prefix' and remove old bindings.
+  "Set leader key to `key' and non-normal-prefix to `prefix' and
+remove old bindings.
 
 Passing `nil' as `prefix' leaves prefix unchanged."
   (let ((global-on global-evil-leader-mode)
